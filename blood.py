@@ -59,5 +59,13 @@ while True:
 
     elif(choice==5):
         print("delete donor selected")
+        bloodgroup = input("enter the bloodgroup: ")
+        sql = "DELETE FROM `donors` WHERE `bloodgroup` ='"+bloodgroup+"'"
+        mycursor.execute(sql)
+        mydb.commit()
+        print("data deleted successfully")
+    
+
+
     elif(choice==6):
         break
