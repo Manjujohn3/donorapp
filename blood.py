@@ -47,6 +47,16 @@ while True:
 
     elif(choice==4):
         print("update donor selected")
+        name = input("enter the name")
+        bloodgroup = input("enter the bloodgroup to be updated")
+        unit = input("enter the unit to be updated ")
+        phone = input("enter the number to be updated")
+        place = input("enter the place to be updated")
+        sql = "UPDATE `donors` SET `bloodgroup`='"+bloodgroup+"',`unit`='"+unit+"',`phone`='"+phone+"',`place`='"+place+"' WHERE `name`='"+name+"'"
+        mycursor.execute(sql)
+        mydb.commit()
+        print("updated succusfully")
+
     elif(choice==5):
         print("delete donor selected")
     elif(choice==6):
