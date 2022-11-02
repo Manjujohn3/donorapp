@@ -10,7 +10,9 @@ while True:
     print("3 search a donor")
     print("4 update the donor")
     print("5 delete a donor")
-    print("6 exit")
+    print("6 total units of blood")
+    print("7 name the donor with place")
+
 
     choice = int(input("Enter an option: "))
     if(choice==1):
@@ -64,8 +66,14 @@ while True:
         mycursor.execute(sql)
         mydb.commit()
         print("data deleted successfully")
-    
-
 
     elif(choice==6):
+         print(" total unit blood")
+         sql = "SELECT SUM(`unit`) FROM `donors`"
+         mycursor.execute(sql)
+         result = mycursor.fetchall()
+         print(result)
+
+
+    elif(choice==7):
         break
