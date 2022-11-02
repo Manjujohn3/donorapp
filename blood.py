@@ -37,6 +37,14 @@ while True:
 
     elif(choice==3):
         print("search donor selected")
+
+        bloodgroup = input("enter the bloogroup: ")
+        sql = "SELECT `id`, `name`,`bloodgroup`, `unit`, `phone`, `place` FROM `donors` WHERE `bloodgroup` ='" +bloodgroup+"'"
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        print(result)
+
+
     elif(choice==4):
         print("update donor selected")
     elif(choice==5):
